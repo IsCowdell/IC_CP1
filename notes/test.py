@@ -1,2 +1,2 @@
-print("test")
-print("update")
+print("Test")
+print("Update")
