@@ -2,18 +2,21 @@
 
 
 
-first_name = input("what is your first name").strip().title()
+name_input = input("Enter your full name (first and last): ")
+phone_input = input("Enter your phone number (10 digits, no spaces): ")
+gpa_input = input("Enter your GPA: ")
 
-last_name = input("What is your last name? ").strip().title()
 
-phone_number = str(float(input("what is your phone number")))
+formatted_name = ' '.join([word.capitalize() for word in name_input.strip().split()])
 
-gpa = input("what is your GPA? ").strip()
 
-full_name = first_name + " " + last_name
-print("name:",full_name)
+formatted_phone = f"{phone_input[0:3]} {phone_input[3:6]} {phone_input[6:10]}"
 
-phone_1 = phone_number[0.3]
-phone_2 = phone_number[3.6]
-phone_3 = phone_number[6.10]
-print(phone_1 + phone_2 + phone_3)
+
+formatted_gpa = round(float(gpa_input), 1)
+
+
+print("\nFormatted Output:")
+print(f"name: {formatted_name}")
+print(f"phone: {formatted_phone}")
+print(f"GPA: {formatted_gpa}")
