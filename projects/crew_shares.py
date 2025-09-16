@@ -27,5 +27,3 @@ def calculate_shares(total_treasure, num_crew_members):
 # You can change these values or prompt the user for input
 total_treasure = float(input("Enter total treasure amount in dollars: "))
 num_crew_members = int(input("Enter number of crew members: "))
-
-calculate_shares(total_treasure, num_crew_members)
