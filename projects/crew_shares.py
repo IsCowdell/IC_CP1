@@ -1,15 +1,31 @@
 #IC 1st Crew Shares
 
-print("The crew earned a whole bunch of money on the last outing, but the captain didn't have time to divvy it all up before release everyone to port." "He gave each member of the crew 500 dollars for the evening and then sat down with his first mate to properly divide the shares. The captain of the crew gets 7 shares. The first mate gets 3 share. Each member of the crew then gets 1 share but the crew members have all already received $500.")
+def calculate_shares(total_treasure, num_crew_members):
+    # Total shares: Captain (7) + First Mate (3) + Crew (1 each)
+    total_shares = 7 + 3 + num_crew_members
 
-crenum = int(input"How many crew members are there:" )
-                
-outing = (input("how many crew members are there? "))
+    # Value of one share
+    share_value = total_treasure / total_shares
 
-final_money = (outing_money/crew_number * 500)
+    # Calculate individual payouts
+    captain_share = 7 * share_value
+    first_mate_share = 3 * share_value
+    crew_share = share_value
 
-caps_share = float(round(outing_money * (7/11),2))
-print(caps_share)
-firstmate_share = float(round((outing_money * (3/11),2)))
-print(firstmate_share)
-crew_share 
+    # Adjust crew payout (they already received $500)
+    crew_remaining = crew_share - 500
+
+    # Display results
+    print(f"Total treasure: ${total_treasure:,.2f}")
+    print(f"Number of crew members: {num_crew_members}")
+    print(f"Each share is worth: ${share_value:,.2f}")
+    print(f"Captain receives: ${captain_share:,.2f}")
+    print(f"First Mate receives: ${first_mate_share:,.2f}")
+    print(f"Each crew member still needs to be given: ${crew_remaining:,.2f}")
+
+# Example usage
+# You can change these values or prompt the user for input
+total_treasure = float(input("Enter total treasure amount in dollars: "))
+num_crew_members = int(input("Enter number of crew members: "))
+
+calculate_shares(total_treasure, num_crew_members)
