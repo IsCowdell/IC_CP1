@@ -1,22 +1,24 @@
 # IC 1st User Sign In
 
-passwordfirst = 12345
-firstusername = "isabella"
+correct_username = "isabella"
+correct_password = 12345
 
-username = input("what is your username? ")
-password = input("what is your password? ")
-check = username == firstusername 
+username = input("What is your username? ")
+password = input("What is your password? ")
 
-false_password = password != passwordfirst
-false_username = username != firstusername
 
-if username == firstusername:
-    print(f"Your username is true!")
-elif username == false_username: 
-     print(f" stop faking identies")
-if password == passwordfirst: 
-    print(f"Your password is true") 
-elif  password  == false_password: 
-   print(f"Stop trying to get into people's accounts")
-else: 
-     print(f"wow its really you!") # type: ignore
+
+if username == correct_username:
+    print("Your username is correct!")
+else:
+    print("Stop faking identities!")
+
+
+if password == correct_password:
+    print("Your password is correct!")
+else:
+    print("Stop trying to get into people's accounts!")
+
+
+if username == correct_username and password == correct_password:
+    print("Wow, it's really you!")
