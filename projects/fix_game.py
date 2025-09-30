@@ -9,6 +9,7 @@ def start_game():
     max_attempts = 10
     attempts = 0
     game_over = False
+    #logic error doesn't ever define game over fix would be that you define it this is important because someone could get mixed up.
 
     while not game_over:
         try:
@@ -20,7 +21,7 @@ def start_game():
             print("Please enter a valid number.")
             continue
 
-        attempts += 1  # Bug 2: Logic Error - attempts were never started 
+        attempts += 1  # Bug 2: Logic Error attempts were never started 
         
         # Why: Without adding it, the game never reaches max_attempts
 
@@ -29,7 +30,8 @@ def start_game():
             game_over = True
         elif guess == number_to_guess:
             print("Congratulations! You've guessed the number!")
-            game_over = True
+            game_over = True 
+            
         elif guess > number_to_guess:
             print("Too high! Try again.")
         elif guess < number_to_guess:
