@@ -1,25 +1,41 @@
 #IC 1st class Shopping List Manager
 
 shopping_list = []
-item = []
+
 
 while True:
-    print ("1 = add to list \n 2 = remove something from list \n 3 = show list \n  4 = ")
-    action = ("exit") 
+    action = input("\nChoose an action: add = 1, remove= 2 , view =3 , or exit = 4: ")
 
     if action == "1":
-        item = str(input("What is the item you want to add "))
+        item = input("Enter item to add: ")
         shopping_list.append(item)
-        print(f"the item you added was",(item))
-    elif action == "2": 
-        removal = str(input("what item do you want to get rid of? "))
-    elif item == removal:
-        shopping_list.remove(item)
-        print(f"you removed",(item))
+        print(f'"{item}" added to the list.')
+        print("Your shopping list:")
+        for item in shopping_list:
+            print(f"- {item}")
+
+    elif action == "2":
+        item = input("Enter item to remove: ")
+        if item in shopping_list:
+            shopping_list.remove(item)
+            print(f'"{item}" removed from the list.')
+        else:
+            print(f'"{item}" not found in the list.')
+        print("Your shopping list:")
+        for item in shopping_list:
+            print(f"- {item}")
+
     elif action == "3":
-         print(shopping_list)
+        if shopping_list:
+            print("Your shopping list:")
+            for item in shopping_list:
+                print(f"- {item}")
+        else:
+            print("Your shopping list is empty.")
 
     elif action == "4":
-        break
+        print("Exiting Shopping List Manager. Goodbye!")
+        running = False
+
     else:
-        print("that is not a vaild action")
+        print("Invalid action. Please choose add, remove, view, or exit.")
