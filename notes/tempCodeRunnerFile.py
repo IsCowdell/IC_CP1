@@ -1,4 +1,9 @@
-board = [[1,2,3],
-         [4,5,6],
-         [7,8,9]
-         ]
+
+
+goose = random.randint(1,20)
+count = 0
+
+while True:
+  count += 1 
+  if count == goose:
+    break
