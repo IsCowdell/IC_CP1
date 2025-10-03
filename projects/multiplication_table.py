@@ -1,18 +1,9 @@
-#IC multiplication_table
-
-num = [1,2,3,4,5,6,7,8,9,10,11,12]
-numa = [1,2,3,4,5,6,7,8,9,10,11,12]
-
-list_secound = []
-complete_list = []
-
-for i in num:
-    numa = i 
-    for y in numa:
-      complete_list = i*y
-      list_secound.append[complete_list]
-
-print(complete_list)
+#IC 1st multiplication_table
 
 
+max_value = 12
 
+for i in range(0, max_value + 1):
+    print("{:3} {:3} {:3} {:3} {:3} {:3} {:3} {:3} {:3} {:3} {:3} {:3}".format(
+        i * 1, i * 2, i * 3, i * 4, i * 5, i * 6, i * 7, i * 8, i * 9, i * 10, i * 11, i * 12
+    ))
