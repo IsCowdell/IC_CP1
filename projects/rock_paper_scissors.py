@@ -11,15 +11,15 @@ while running:
     scissors = 2 
     roll =  random.randint(1,3)
 
-    if roll == scissors:
-       print("I got scissors")
-       print("You guys tied!")
-    elif roll < scissors :
-            print("I got paper")
-            print("Aw, dang it you won")
-    elif roll > scissors:
+    if roll < scissors:
+        print("I got paper")
+        print("Aw, dang it you won")
+    elif roll > scissors :
             print("I got rock")
             print("yay, I won")
+    elif roll == scissors:
+            print("We tied!")
+           
     else: 
             ("do you want to quit? 1 is yes, 2 is no")
             if quit == 1:

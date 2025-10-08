@@ -1,2 +1,2 @@
 
-        print("I got scissors")
+            print("I got rock")

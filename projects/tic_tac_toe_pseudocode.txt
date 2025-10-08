@@ -1,0 +1,23 @@
+# IC 1st tic_tac_toe_pseudocode
+
+
+
+show the user lets play ticktack toe 
+
+yes = true 
+
+no = false
+
+if yes then show the user the board 
+
+row1 = 0
+row2 = 0,0,0
+board = [[0,0,0],
+         [0,0,0],
+         [0,0,0]
+         ] 
+
+
+
+
+
