@@ -2,28 +2,32 @@
 
 import random
 
+your_score = 0
 running = True
 
 while running:
-    user_input = input("choose rock, paper,scissors")
-    rock = 1
-    paper = 3
-    scissors = 2 
-    roll =  random.randint(1,3)
+    user = input("choose rock, paper, scissors or quit: ")
+    roll = random.choice(["rock", "paper", "scissors"])
+    if user == "quit":
+        break
+    elif user == "rock" or user == "paper" or user == "scissors":
+        print(f"I got {roll}")
+        if roll != user:
+           if (roll == "rock" and user == "paper") or (roll == "paper" and user == "scissors") or (roll=="scissors" and user=="rock"):
+                print("You won")
+                your_score += 1
+                print(f"Your Score: {your_score}")
+           else:
+                print("You lost!")
+                print(f"Your Score: {your_score}")
 
-    if roll < scissors:
-        print("I got paper")
-        print("Aw, dang it you won")
-    elif roll > scissors :
-            print("I got rock")
-            print("yay, I won")
-    elif roll == scissors:
-            print("We tied!")
+        else:
+                print("We tied!")
+                print(f"Your Score: {your_score}")
+    else:
+        print("invaild input try again")    
+
+    
            
-    else: 
-            ("do you want to quit? 1 is yes, 2 is no")
-            if quit == 1:
-                break
 
-else:
-        print("your input is invaild")
+       
