@@ -1,21 +1,46 @@
 # IC 1st tic_tac_toe_pseudocode
 
 
+import random
 
-show the user lets play ticktack toe 
+your_score = 0
+running = True
 
-yes = true 
+board = [[1,2,3],
+         [4,5,6],
+         [7,8,9]
+         ]
+row1 = [1,2,3]
+row2 = [4,5,6]
+row3 = [7,8,9]
+row4 = [1,5,9]
+row5 = [3,5,7]
+row6 = [2,5,8]
+row7 = [1,4,7]
+row8 = [3,6,9]
 
-no = false
+while running:
+    user = input("choose 1, 2,3,4,5,6,7,8,9, or quit: ")
+    roll = random.choice(["1","2","3","4","5","6","7","8","9"])
+    if user == "quit":
+        break
+    or if user == "1" or user == "2" or user == "3"or user == "4" or user == "5" or user == "6" or user == "7" or user == "8" or user == "9":
+        show the user "you are X i am O"
+         add X to board in the place of ()
+    else:
+     show the user invaild input 
 
-if yes then show the user the board 
+     show the user the roll
 
-row1 = 0
-row2 = 0,0,0
-board = [[0,0,0],
-         [0,0,0],
-         [0,0,0]
-         ] 
+    if user 
+
+
+
+        if roll does not equal user:
+        or if show the user the board and show where they placed it 
+
+
+              
 
 
 
