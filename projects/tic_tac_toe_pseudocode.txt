@@ -26,7 +26,9 @@ while running:
         break
     or if user == "1" or user == "2" or user == "3"or user == "4" or user == "5" or user == "6" or user == "7" or user == "8" or user == "9":
         show the user "you are X i am O"
-         add X to board in the place of ()
+         add X to board in the place of()
+         add o to board in place of ()
+
     else:
      show the user invaild input 
 
