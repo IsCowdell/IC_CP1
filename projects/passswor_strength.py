@@ -11,39 +11,61 @@ length = len(password)
 if length >= 8:
         #and then print you get another point and a good password
         print("wow you have a long password")
-        #add another point
-        score + 1
+        #add another point and show user score
+        score += 1
+        print(f"this is your score {score}")
     #if not true then show the user you lost a point 
 else:
      print("you missed this point")
 
 #check if the password has lowercases 
+
 for X in password:
-    if X.islower() == True:
-        #if it has lowercase prints you get one point 
+    if X.islower() != True:
+        print("you lost a point")
+
+    else:
+       #if it has lowercase prints you get one point 
         print("wow you have lowercases")
-         #add score one point 
-        score + 1
-    
-    #else show the user you missed a point and try again 
+         #add another point and show user score
+        score += 1 
+        print(f"this is your score {score}")
+pass
+
+for X in password:
 
     if X.isupper() == True: 
         #print you get one point and has a pretty good score
         print("you have and uppercase good job + one point ")
-        #add one point 
-        score + 1 
+       #add another point and show user score
+        score += 1 
+        print(f"this is your score {score}")
         
-     #else show the user you missed a point and try again 
-
-      elif length >= 8:
-  
-  
       #else show the user you missed a point and try again 
     else:
-        print()
-        
-    #else show the user you missed a point and try again 
+        print("you lost a point")
+       
 
+
+  
+    
+for X in password:     
+    #check if password has digit
+    if X.isdigit() != True:
+    #else show the user you missed a point try again
+        print("you lost point")
+    else:
+         #show the user that they have a number 
+         print("You have a number lets goooo")
+        #add another point and show user score
+         score += 1 
+         print(f"this is your score {score}")
+         
+    break
+         
+else:
+     print("you need a new password ")
+    
 
 
 
