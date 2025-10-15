@@ -6,6 +6,10 @@ score = 0
 password = input("What do you want your password to be? ").strip()
 #assign your password a variable
 X = password
+#making sure it checks it once
+uppercase = False
+#making sure its only once
+digit = False
 #define length of password
 length = len(password)
 if length >= 8:
@@ -30,30 +34,30 @@ for X in password:
          #add another point and show user score
         score += 1 
         print(f"this is your score {score}")
-pass
 
-for X in password:
 
     if X.isupper() == True: 
-        #print you get one point and has a pretty good score
-        print("you have and uppercase good job + one point ")
-       #add another point and show user score
-        score += 1 
+       #making sure it onl adds one point 
+        if uppercase == False:
+             #add one point 
+             score += 1
+       #upperscase cannot affect the score
+        uppercase = True
+       #SHOW USER THE SCORE
         print(f"this is your score {score}")
-        
       #else show the user you missed a point and try again 
     else:
         print("you lost a point")
-       
-
-
-  
-    
-for X in password:     
+           
     #check if password has digit
-    if any(X.isdigit()) != True:
-    #else show the user you missed a point try again
-        print("you lost point")
+    if X.isdigit() == True:
+   #check if it has a digit
+        if digit == False:
+             #INCREASE score
+             score += 1
+             #numbers can no longer affect it 
+             digit = True
+         
     else:
          #show the user that they have a number 
          print("You have a number lets goooo")
