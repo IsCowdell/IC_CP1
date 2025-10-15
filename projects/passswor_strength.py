@@ -51,7 +51,7 @@ for X in password:
     
 for X in password:     
     #check if password has digit
-    if X.isdigit() != True:
+    if any(X.isdigit()) != True:
     #else show the user you missed a point try again
         print("you lost point")
     else:
