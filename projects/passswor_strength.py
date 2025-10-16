@@ -1,90 +1,71 @@
-#IC 1st strength password
-
-#Assign a score a value 
-score = 0 
-#Ask user for password and assign password a value and remove white spaces
-password = input("What do you want your password to be? ").strip()
-#assign your password a variable
-X = password
-#making sure it checks it once
-uppercase = False
-#making sure its only once
+#IC 1st strength password 
+#assigning the score a value 
+score = 0
+#making sure that length will be changed
+length = False
+#making sure that lower will be changed
+lower = False
+#making sure that upper will be changed
+upper = False
+#making sure that digit will be changed
 digit = False
-#define length of password
-length = len(password)
-#checking if length fits criteria 
-if length >= 8:
-        #and then print you get another point and a good password
-        print("wow you have a long password")
-        #add another point and show user score
-        score += 1
-        print(f"this is your score {score}")
-    #if not true then show the user you lost a point 
-else:
-     print("you missed this point")
-
-#check if the password has lowercases 
-
+#making sure that unique will be changed
+unique = False
+#ask user what they want the password to be 
+password = input("What is your Password?: ")
+#make sure password is requied length
+if len(password) >= 8:
+     #once equal true don't check again
+     length = True
+     #for whatever password is and check mutple times
 for X in password:
-    if X.islower() != True:
-        print("you lost a point")
+     #checking for lowercase
+     if X.islower():
+          lower = True
+    #checking for uppercase 
+     if X.isupper():
+          upper = True
+        #checking for numbers
+     if X.isdigit:
+          digit = True
+        # checking for special characters
+     if not X.isalnum():
+          unique = True
+#meets required length give point 
+if length:
+     score += 1
+     #show user how they got point 
+     print("You got a point for a long password")
+     # if user has a lowcase give point 
+if lower:
+     score += 1
+     #show user they got point 
+     print("You got a point for having lowercase")
+     #if user has an uppercase give point 
+if upper:
+     #show user they got point and add point 
+     score += 1
+     print("You got a point for having uppercase")
+     #if user has special characters 
+if digit:
+     # add one to points and show user they got point for having digit 
+     score += 1
+     print("You got a point for having a digit")
 
-    else:
-       #if it has lowercase prints you get one point 
-        print("wow you have lowercases")
-         #add another point and show user score
-        score += 1 
-        print(f"this is your score {score}")
-
-
-    if X.isupper() == True: 
-       #making sure it onl adds one point 
-        if uppercase == False:
-             #add one point 
-             score += 1
-       #upperscase cannot affect the score
-        uppercase = True
-       #SHOW USER THE SCORE
-        print(f"this is your score {score}")
-      #else show the user you missed a point and try again 
-    else:
-        print("you lost a point")
-           
-    #check if password has digit
-    if X.isdigit() == True:
-   #check if it has a digit
-        if digit == False:
-             #INCREASE score
-             score += 1
-             #numbers can no longer affect it 
-             digit = True
-         
-    else:
-         #show the user that they have a number 
-         print("You have a number lets goooo")
-        #add another point and show user score
-         score += 1 
-         print(f"this is your score {score}")
-         
-    break
-         
-else:
-     print("you need a new password ")
-    
-
-
-
-
-
-
-#then check if the values are lowcases or uppercases 
-#contuinely add one too the score if they get a uppercase or lowercase and a special character and number
-#criteria is one uppercase, one lowercase, special character, and a number
-# if the user has 1-2 points then show your user your password is very weak 3 points: Moderate 4 points: Strong 5 points: Very Strong
-
-
-
-
-
-
-
+if unique:
+     # add one to points and show user they got point for having special characters 
+     score += 1
+     print("You got a point for having unique characters")
+#setting the score requirments 
+#if the score is less than two show user you have weak password
+if score < 2:
+     print("You have a weak password")
+#if score equal to 3 show user you have moderate password
+elif score == 3:
+     print("You have a moderate password")
+#if score equal 4 then show user you have a strong password 
+elif score == 4:
+     print("you have a strong password")
+#if score equal 5 then show user you have a very strong password
+elif score == 5:
+     print("You have a very strong password")
