@@ -8,6 +8,7 @@ password = input("What do you want your password to be? ").strip()
 X = password
 #define length of password
 length = len(password)
+#checking if length fits criteria 
 if length >= 8:
         #and then print you get another point and a good password
         print("wow you have a long password")
