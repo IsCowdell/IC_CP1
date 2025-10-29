@@ -1,2 +1,2 @@
 
-            print("I got rock")
+t4.pendown()
