@@ -1,5 +1,5 @@
 #IC 1st turtle race 
-import tkinter as tk
+
 import turtle as t 
 import random 
 t.Screen
@@ -78,13 +78,9 @@ else:
 
 
 def check_colliosm():
-    if t1 or t2 or t3 or t4 or t5 >= finish_line:
-        print("YAS")
+    for t in [t1, t2, t3, t4, t5]:
+        if t.xcor() >= 250:
+            print(f"{t.color()[0]} turtle is the a winner")
 check_colliosm()
 
-
-
-
-
-   
 
