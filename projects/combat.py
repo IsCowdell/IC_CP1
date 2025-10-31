@@ -17,12 +17,12 @@ def playerturn():
  print("4. Flee (or at least try)")
  action = int(input())
  if action == 1:
-     print("You do a normal attack")
-     attk = strength + random.randint(0,20)
-     if attk > enemy_defense:
+    print("You do a normal attack")
+    attk = strength + random.randint(0,20)
+    if attk > enemy_defense:
          enemy_health -= attk
          print("Attack success, enemy health:", enemy_health)
-     else:
+    else:
          print("Attack Failed")
 
  elif action == 2:
