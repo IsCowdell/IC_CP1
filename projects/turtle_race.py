@@ -2,9 +2,8 @@
 
 import turtle as t 
 import random 
-
-screen = t.Screen()
-screen.setup(600, 400)
+t.Screen
+t.setup(600, 400)
 t1side = random.randint(10,100)
 t2side = random.randint(20,150)
 t3side = random.randint(70,200)
