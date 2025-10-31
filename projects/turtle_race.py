@@ -1,5 +1,5 @@
 #IC 1st turtle race 
-
+import tkinter as tk
 import turtle as t 
 import random 
 t.Screen
