@@ -1,16 +1,17 @@
 #IC 1st turtle race 
-
+#importing turtle 
 import turtle as t 
 import random 
 t.Screen
 t.setup(600, 400)
+#defining how much turtle moves 
 t1side = random.randint(10,100)
 t2side = random.randint(20,150)
 t3side = random.randint(70,200)
 t4side = random.randint(70,100)
 t5side = random.randint(13,125)
 
-
+#ssging each turtle their own thingy
 t1 = t.Turtle()
 t2= t.Turtle()
 t3 = t.Turtle()
@@ -18,6 +19,7 @@ t4 = t.Turtle()
 t5= t.Turtle()
 finish_line = t.Turtle()
 
+#making them draw lines and get in starting postion
 def turtle_starting():
  finish_line.penup()
  finish_line.goto(250,300)
@@ -45,7 +47,7 @@ def turtle_starting():
  t5.speed(8)
  finish_line.speed(20)
 
-
+#making them look sexy look at those colors
 def making_turtles(): 
 
  t1.shape("turtle")
@@ -62,7 +64,7 @@ def making_turtles():
 
 making_turtles()
 turtle_starting()
-
+#Making them move
 for x in range(1,5):
     t1.forward(t1side)
     t2.forward(t2side)
@@ -76,7 +78,7 @@ else:
 
 
 
-
+#making winner cause if there is no losers no one will be a winner
 def check_colliosm():
     for t in [t1, t2, t3, t4, t5]:
         if t.xcor() >= 250:
