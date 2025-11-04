@@ -14,7 +14,25 @@ for x in range(4):
     t.right(90)
     t.forward(300)
 
+t.right(90)
+t.forward(200)
+t.right(90)
+t.forward(100)
+t.right(90)
+t.forward(100)
+t.right(90)
+t.forward(100)
+t.right(90)
+t.forward(100)
 
+t.penup()
+t.right(90)
+t.forward(300)
+t.right(90)
+t.pendown()
+t.forward(100)
+t.right(-36)
+t.forward(100)
 
 def is_sovlable(row_grid, col_grid):
     size = len(row_grid) - 1
