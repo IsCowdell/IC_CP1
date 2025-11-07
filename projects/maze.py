@@ -41,6 +41,7 @@ def rowmaze(row_grid,random_options,target_value):
         for i in range(len(row_grid)):
             if row_grid[i] == target_value:
                 row_grid[i] = random_options(0,1)
+                sharah.forward(row_grid)
     return rowmaze
 
 
@@ -49,6 +50,9 @@ def colmaze(col_grid,random_options,target_value2):
         for c in range(len(col_grid)):
             if col_grid[c] == target_value2: 
                 col_grid[c] == random_options(0,1)
+                sharah.forward(col_grid)
+    
+    colmaze()
 
 
     
@@ -74,5 +78,4 @@ def is_sovlable(row_grid, col_grid):
 
         if y < size - 1 and col_grid[y+1][x] == 0:
             stack.append((x,y+1))
-
             
