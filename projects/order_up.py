@@ -39,7 +39,7 @@ else:
     quit
 
 
-main_choice = input("choose what you want for your main dish: ").lower
+main_choice = input("choose what you want for your main dish: ").lower()
 
 if main_choice in main_dishes:
     print("we have that dish")
