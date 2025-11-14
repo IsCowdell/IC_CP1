@@ -41,7 +41,8 @@ order = []
 
 
 
-#letting user choose what they want for their drink
+#letting user choose what they want for their drink and adding it to their order
+
 drink_choice = input("choose what you want for your drink: ").lower().strip()
 if drink_choice in drinks: 
     print("We have that drink")
@@ -56,6 +57,7 @@ else:
 
 
 
+#letting user choose what they want for their main dish 
 main_choice = input("choose what you want for your main dish: ").lower().strip()
 
 if main_choice in main_dishes:
@@ -68,32 +70,30 @@ if main_choice in main_dishes:
 else:
     print("we don't have that dish try again")
 
+#asking user what they want for their side dish
 sidedish1 = input("choose first side dishes: ").lower().strip()
 
 if sidedish1 in side_dishes:
-    print("we have that dish")
-    side1price =  side_dishes[sidedish1]
-    print(f"This is the price of your side dish ${side1price}")
-    order.append(sidedish1)
-    print(f"this is order so far {order}")
+ print("we have that dish")
+ side1price =  side_dishes[sidedish1]
+ print(f"This is the price of your side dish ${side1price}")
+ order.append(sidedish1)
+ print(f"this is order so far {order}")
 else:
     print("we don't have that dish try again")
-
-
-
 sidedish = input("choose second side dishes: ").lower()
-
+#setting up what they want for their second dish 
 if sidedish in side_dishes:
-    print("we have that dish")
-    side2price =  side_dishes[sidedish]
-    print(f"This is the price of your side dish ${side2price}")
-    order.append(sidedish)
-    print(f"this is order so far {order}")
+ print("rice we have that dish")
+ side2price =  side_dishes[sidedish]
+ print(f"This is the price of your side dish ${side2price}")
+ order.append(sidedish)
+ print(f"this is order so far {order}")
 else:
-    print("we don't have that dish try again")
+     print("we don't have that dish try again")
+    
 
-
+#calucating final cost
 finalcost = (side1price + side2price + drinkprice + mainprice)
-
-
+#telling user final cost
 print(f"this is your final order{order} and the final cost ${finalcost} ")
