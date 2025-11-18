@@ -11,7 +11,7 @@ t3side = random.randint(70,200)
 t4side = random.randint(70,100)
 t5side = random.randint(13,125)
 
-#ssging each turtle their own thingy
+#assign each turtle their own thingy
 t1 = t.Turtle()
 t2= t.Turtle()
 t3 = t.Turtle()
