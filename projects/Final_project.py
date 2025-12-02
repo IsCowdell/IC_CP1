@@ -6,10 +6,18 @@
 #health = 100
 #strength = 50 
 # charcters 
-# dictionary for inverntory
+# gilbert = 500 health and strength = 300 
+# conductor = health 200 and strength = 20
+# Shiny = health 50 and strength = 10
+# list for inverntory
 #buddy 
 # this will be your guide and explain each room to you 
 # print hi my name is buddy I will guide you
+# defing function to see if user picekd up item 
+# if item in inventory 
+# do not show user item.
+# function fight
+# 
 # def function family car 
 #right now you are in the family car
 # the room is empty but a bed the bed does nothing 
@@ -36,7 +44,11 @@
 # and a slide looking higher than your dreams
 # or you could leave
 # user choice(" where to ball pit or slide or leave ") 
-
+# if slide:
+# show user wow you went down the slide;
+# leave()
+# else:
+#leave()
 # if ball pit 
 # print(you jump into the pit you can just smell the amount of socks in it )
 #(you can jump out)
@@ -71,11 +83,32 @@
 #(you look down at your hands wondering if they could.... its just a kid.)
 #(the cries just stop you look down his neck in your hands.)
 #mental - 20 
-#(f"Your mental state is {mental} low get it up) 
+#(f"Your mental state is {mental} low get it up)     
 #
 # else
 # print("Don won but he doesn't look happy.....")
+# print("He follows you around yelling try harder")
+# print(leave or fight)
+ # if leave give user choice between dinning room or coal cart:
+# function for dinning room
+# food is stacked up until the roof but it smells so bad 
+# conductor is walking around the table checking for kids
+# he looks over and waves   
+# There is a fork
+# do you want to grab it? y/n 
+# if yes:
+# add to inventory()
+# else:
+#wow
+# function for coal car 
+# Print(" This is the only place you can get your mental health back vist often")
+# print("coal stacked as tall as much money I have")
+# mental_state + 20 
+# print(" you got 20 added onto your mental state make sure it doesn't go lower than 20")
+
+# function for habit car water 
+# There is water every where make it so humid you think your socks are wet
+# like florida
+#  Shiny flies over head every other second shreching and yelling
+#  shiny lands time to fight()
 # 
-
-
-#
