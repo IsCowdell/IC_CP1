@@ -1,8 +1,7 @@
 #IC 1st Dinosaur train final project 
 
-#Make a function for mental state 
+#
 # mental = 100
-#Function for health 
 #health = 100
 #strength = 50 
 # charcters 
@@ -10,58 +9,46 @@
 # conductor = health 200 and strength = 20
 # Shiny = health 50 and strength = 10
 # list for inverntory
+# making a list for all of the rooms
+
 #buddy 
 # this will be your guide and explain each room to you 
 # print hi my name is buddy I will guide you
-# defing function to see if user picekd up item 
+# define the function to see if user picekd up item 
 # if item in inventory 
 # do not show user item.
-# function fight
-# 
-# def function family car 
-#right now you are in the family car
-# the room is empty but a bed the bed does nothing 
-#user choice 
-#input("do you want to leave the room or touch the bed")
-#if user_choice == "leave room"
-# then input("what room do you want to go to dinning room or the play area")
-# def function secret  tunnels 
-#elif print("you are in the secret tunnel")
-#print(" you found Henry Hermit Crab do you want to pet him or countine foward")
-# if pet him then 
-# print(" you got a roasted crab it can increase your heath by 10 points ")
-# print(" when the option is given to you open your invertory by pressing 1")
-# add roasted crab to invetory
-# subtract mental state by 20 
-# print(f"your mental state is now {mental state} make sure it doesn't get to low like 20")
-# if "countine foward"
-#show the user you got out of the tunnel you are in the play area
-#else
-#incorrect vaule send back up 
-#if user_choice == "play area"
-#  buddy "You enter a darkish yellow room with a smell of apple sauce and tears"
-# there is a ball pit looking deeper than your sorrows(ik you have a lot)
-# and a slide looking higher than your dreams
-# or you could leave
-# user choice(" where to ball pit or slide or leave ") 
-# if slide:
-# show user wow you went down the slide;
-# leave()
+
+# define the function enemy fight: 
+ #global health, enemy_health, strength, enemy health 
+ #show the user("Monster Attacks you")
+    #attk = enemy_hit + random.randint(0,20)
+    #if attk > stength :
+        #health -= attk
+        #print("Monster attacked you. Your health is now", health)
+    #else:
+        #show the user ("Monster Attack failed")
+
+#  define the function fight:
+# show the user(are you ready to fight)
+#  show the user you have three different attacks
+# ask the user(f"But first do you want to use anything in your{inventory}") 
+# if user has fork:
+# increase strength by 20 
+# if user has roasted crab:
+# increase health by 20 
+# if user has dollar bill:
+# health by 10: 
 # else:
-#leave()
-# if ball pit 
-# print(you jump into the pit you can just smell the amount of socks in it )
-#(you can jump out)
-# if "jump out"
-# you get out and (leave function)
-# else:
-# you swim around and found a dollar 
-# (keep it? y\n)
-# if yes add to inventory() 
-# else 
-# leave function()
-#
+# show the user you have nothing in your inventory
+# show the user choose your attacks
+#  attack one will be smack hard 
+# attack two will be smack harder
+# attack three is kick hard 
+# attack one gets minus 20 health 
+# attack 2 gets minus 40 health
+# atttack 3 gets minus 30 health 
 # 
+
 # leave function 
 # and go to *crash*
 # Don gets in your way asking to play a game. 
@@ -89,7 +76,7 @@
 # print("Don won but he doesn't look happy.....")
 # print("He follows you around yelling try harder")
 # print(leave or fight)
- # if leave give user choice between dinning room or coal cart:
+
 # function for dinning room
 # food is stacked up until the roof but it smells so bad 
 # conductor is walking around the table checking for kids
@@ -100,15 +87,100 @@
 # add to inventory()
 # else:
 #wow
+# 
+# 
+# define the function family car 
+#right now you are in the family car
+# the room is empty but a bed the bed does nothing 
+#user choice 
+#input("do you want to leave the room or touch the bed")
+#if user_choice == "leave room"
+# then input("what room do you want to go to dinning room or the play area")
+# define the function secret  tunnels 
+#else if print("you are in the secret tunnel")
+#print(" you found Henry Hermit Crab do you want to pet him or countine foward")
+# if pet him then 
+# print(" you got a roasted crab it can increase your heath by 10 points ")
+# print(" when the option is given to you open your invertory by pressing 1")
+# add roasted crab to invetory
+# subtract mental state by 20 
+# print(f"your mental state is now {mental state} make sure it doesn't get to low like 20")
+# if "countine foward"
+#show the user you got out of the tunnel you are in the play area
+#else
+#incorrect vaule send back up 
+
+# defining function play room 
+# buddy "You enter a darkish yellow room with a smell of apple sauce and tears"
+# there is a ball pit looking deeper than your sorrows(ik you have a lot)
+# and a slide looking higher than your dreams
+# or you could leave
+# user choice(" where to ball pit or slide or leave ") 
+# if slide:
+# show user wow you went down the slide;
+# calling on the function leave()
+# else:
+#leave()
+# if ball pit 
+# print(you jump into the pit you can just smell the amount of socks in it )
+#(you can jump out)
+# if "jump out"
+# you get out and (leave function)
+# else:
+# you swim around and found a dollar 
+# (keep it? y\n)
+# if yes add to inventory() 
+# else 
+# leave function()
+#
+# 
+# 
 # function for coal car 
 # Print(" This is the only place you can get your mental health back vist often")
 # print("coal stacked as tall as much money I have")
 # mental_state + 20 
 # print(" you got 20 added onto your mental state make sure it doesn't go lower than 20")
 
+# function for watching car: 
+# you just watch people consatnly walk by
+# first Mrs. Pteranodon walks by
+# and then Mr Pteranodon 
+# and after that King Cryolophosaurus
+
 # function for habit car water 
 # There is water every where make it so humid you think your socks are wet
 # like florida
 #  Shiny flies over head every other second shreching and yelling
 #  shiny lands time to fight()
+# calling enemy_fight function() 
+
+# function for habit forest car
+# show the user(you are in the forest car it is covered in trees head to toe the air smellys musty)
+# show the user(its dead slient you slowly wonder what else is dead in there)
+# show the user you start seeing stars and decide its best to leave. 
+# mental state minus 20 
 # 
+# function for boss battle 
+# show the user( gilbret screams many people flood in)
+# (he takes a swing)
+# if mental state is lower than 40
+# then he hits you and you lose 20 health 
+# else;
+# he misses but goes again
+# if strength is greater than 25 
+# he misses but goes again
+# else:
+#he hits you and you lose 20 health 
+
+# function for conductor car 
+# show the user (you have entered the conductor car but he isn't in there strange)
+# show the user (something starts cackling in the corner i have been watching you something says)
+# show the user(you look behind you and see.........)
+# show the user(glibert)
+# show the user he is so tiny you could defiently fight him
+# calling on fight function and boss battle function. 
+# switch bewtween the two
+
+
+
+
