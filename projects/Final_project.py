@@ -1,38 +1,73 @@
 #IC 1st Dinosaur train final project 
-
-#
+# import random
+import random
 # mental = 100
+mental = 100 
 #health = 100
+health = 100 
 #strength = 50 
+strength = 50 
 # charcters 
 # gilbert = 500 health and strength = 300 
+gilbert_health = 500
+gilbert_strength = 300 
 # conductor = health 200 and strength = 20
+conductor_health = 200 
+conductor_strength = 20
 # Shiny = health 50 and strength = 10
+shiny = 50 
+shiny_strength = 10
 # list for inverntory
+inventory = []
 # making a list for all of the rooms
+rooms = []
+# don stats
+#strength = 24
+don_strength = 24
+#health = 80 
+health = 80
 
 #buddy 
 # this will be your guide and explain each room to you 
 # print hi my name is buddy I will guide you
+print("hi my name is buddy I will guide you")
+
+
 # define the function to see if user picekd up item 
+def item_pickup():
 # if item in inventory 
+    
 # do not show user item.
 
 # define the function enemy fight: 
- #global health, enemy_health, strength, enemy health 
- #show the user("Monster Attacks you")
+def enemy_fight():
+    #global health, enemy_health, strength, enemy health
+    global health, shiny_strength, shiny, strength
+    #show the user("Monster Attacks you")
+    print("shiny attacks you")
     #attk = enemy_hit + random.randint(0,20)
+    attk = shiny + random.randint(0,20)
     #if attk > stength :
+    if attk > strength:
         #health -= attk
+        health -= attk
         #print("Monster attacked you. Your health is now", health)
+        print("Shiny attacked you. Your health is now",health)
     #else:
+    else:
         #show the user ("Monster Attack failed")
+        print("Monster attack failed")
 
 #  define the function fight:
+def fight(): 
 # show the user(are you ready to fight)
+    print(" are you ready to fight?")
 #  show the user you have three different attacks
-# ask the user(f"But first do you want to use anything in your{inventory}") 
+    print("you have three different attacks")
+# ask the user(f"But first do you want to use anything in your{inventory}")
+    print(f"But first do you want to use anything in your{inventory}")
 # if user has fork:
+if inventory == fork:
 # increase strength by 20 
 # if user has roasted crab:
 # increase health by 20 
@@ -49,39 +84,53 @@
 # atttack 3 gets minus 30 health 
 # 
 
-# leave function 
+# leave function
+def leave():
 # and go to *crash*
+    print("you go to leave and *crash* ")
 # Don gets in your way asking to play a game. 
-# don stats
-#strength = 24
-#health = 80 
+    print("don gets in your way asking to play a game.")
 # You could defiently take this but its just a kid 
+    print("you could yk end him but he is just a kid")
 # do you want to play a game with him,
-#  y\n
-# if ans = "yes"
+    print("You HAVE to play a game with him")
 # you are now playing rock or scissors no paper 
+    print(" you are now plaing rock or scissors no paper")
 # 1 = rock 
+1 = "rock"
 # 2 = scissors 
+2 = "scissors"
 # show the user " chose one 1 or 2"
+choose = input("choose "1" or "2"")
 # if choose = 1 
+if choose == 1:
 # print(" You won")
+    print("You Won!")
 # Don gets mad and cries 
+    print(" Don gets mad and cries")
 # the cries get unbearable
-# (" you wonder what you can do to make them stop")
+    print("cries get unbearable")
+# ("you wonder what you can do to make them stop")
+    print("you wonder what you can do to make them stop")
 #(you look down at your hands wondering if they could.... its just a kid.)
+    print("you look down at your hands wondering if they could.... its just a kid.")
 #(the cries just stop you look down his neck in your hands.)
+    print("the cries just stop you look down his neck in your hands.")
 #mental - 20 
-#(f"Your mental state is {mental} low get it up)     
-#
+    mental - 20
+#(f"Your mental state is {mental} low get it up)   
+    print(f"Your mental state is {mental} low get it up")
 # else
 # print("Don won but he doesn't look happy.....")
 # print("He follows you around yelling try harder")
 # print(leave or fight)
+# else:
+
 
 # function for dinning room
 # food is stacked up until the roof but it smells so bad 
 # conductor is walking around the table checking for kids
-# he looks over and waves   
+# he looks over and waves 
 # There is a fork
 # do you want to grab it? y/n 
 # if yes:
