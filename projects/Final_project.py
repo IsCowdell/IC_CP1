@@ -84,12 +84,14 @@ def fight():
 # show the user choose your attacks
 print("user choose your attacks ")
 #attack one will be smack hard 
-# attack two will be smack harder
-# attack three is kick hard 
-# attack one gets minus 20 health 
-# attack 2 gets minus 40 health
-# atttack 3 gets minus 30 health 
-# 
+print("attack one will be smack hard attack\n two will be smack harder\nattack three is kick hard\n")
+attack = input("Now choose one") 
+if attack == " attack one ":
+    shiny - 20
+if attack == "attack two":
+    shiny - 40 
+if attack == "attack three":
+    shiny - 30
 
 # leave function
 def leave():
@@ -159,81 +161,84 @@ def dinning_room():
 # 
 
 # define the function family car 
-#right now you are in the family car
-# the room is empty but a bed the bed does nothing 
-#user choice 
-#input("do you want to leave the room or touch the bed")
-#if user_choice == "leave room"
-# then input("what room do you want to go to dinning room or the play area")
+def family_car():
+    print("right now you are in the family car")
+    print("the room is empty but a bed the bed does nothing")
+    leaver_room = input("do you want to leave the room or touch the bed?")
+    if leaver_room == "leave room":
+        input("what room do you want to go to?")
+    else:
+        print("you are in the secret tunnel")
+        secret_tunnel()
 # define the function secret  tunnels 
-#else if print("you are in the secret tunnel")
-#print(" you found Henry Hermit Crab do you want to pet him or countine foward")
-# if pet him then 
-# print(" you got a roasted crab it can increase your heath by 10 points ")
-# print(" when the option is given to you open your invertory by pressing 1")
-# add roasted crab to invetory
-# subtract mental state by 20 
-# print(f"your mental state is now {mental state} make sure it doesn't get to low like 20")
-# if "countine foward"
-#show the user you got out of the tunnel you are in the play area
-#else
-#incorrect vaule send back up 
+def secret_tunnel():
+    sercet_choice = input("you found Henry Hermit Crab do you want to pet him or countine foward")
+    if sercet_choice == "pet him":
+        print(" you got a roasted crab it can increase your heath by 10 points ")
+        print(" when the option is given to you open your invertory by pressing 1")
+        inventory.append("roasted crab")
+        mental - 20 
+        print(f"your mental state is now {mental} make sure it doesn't get to low like 20")
+    if sercet_choice ==  "countine foward":
+        print("you got out of the tunnel you are in the play area")
+        play_room()
+    else:
+        print("incorrect value")
+        return
 
 # defining function play room 
-# buddy "You enter a darkish yellow room with a smell of apple sauce and tears"
-# there is a ball pit looking deeper than your sorrows(ik you have a lot)
-# and a slide looking higher than your dreams
-# or you could leave
-# user choice(" where to ball pit or slide or leave ") 
-# if slide:
-# show user wow you went down the slide;
-# calling on the function leave()
-# else:
-#leave()
-# if ball pit 
-# print(you jump into the pit you can just smell the amount of socks in it )
-#(you can jump out)
-# if "jump out"
-# you get out and (leave function)
-# else:
-# you swim around and found a dollar 
-# (keep it? y\n)
-# if yes add to inventory() 
-# else 
-# leave function()
-#
-# 
-# 
-# function for coal car 
-# Print(" This is the only place you can get your mental health back vist often")
-# print("coal stacked as tall as much money I have")
-# mental_state + 20 
-# print(" you got 20 added onto your mental state make sure it doesn't go lower than 20")
+def play_room():
+    print("You enter a darkish yellow room with a smell of apple sauce and tears")
+    print("there is a ball pit looking deeper than your sorrows(ik you have a lot)\n and a slide looking higher than your dreams")
+    play_choice = ("where to the ball pit or slide or leave")
+    if play_choice == "slide":
+        print("wow you went down the slide")
+        leave()
+    if play_choice == "ball pit":
+        print("you jump into the pit you can just smell the amount of socks in it" )
+        ball_pitchoice = input("you can jump out or stay in")
+    if ball_pitchoice == "jump out":
+        print("you get out")
+        leave()
+    else:
+        print("you swim around and a find a dollar")
+        input("keep it yes or no ")
+    if "yes":
+        inventory.append(dollar_bill)
+    else:
+        leave()
+
+def coal_car():
+    print(" This is the only place you can get your mental health back vist often")
+    print("coal stacked as tall as much money I have (so lots)")
+    mental + 20 
+    print(" you got 20 added onto your mental state make sure it doesn't go lower than 20")
 
 # function for watching car: 
-# you just watch people consatnly walk by
-# first Mrs. Pteranodon walks by
-# and then Mr Pteranodon 
-# and after that King Cryolophosaurus
+def watching_car():
+    print("you just watch people consatnly walk by")
+    print("first Mrs. Pteranodon walks by")
+    print("and then Mr Pteranodon")
+    print("and after that King Cryolophosaurus")
 
 # function for habit car water 
-# There is water every where make it so humid you think your socks are wet
-# like florida
-#  Shiny flies over head every other second shreching and yelling
-#  shiny lands time to fight()
-# calling enemy_fight function() 
+def habit_car_water():
+    print("There is water every where\n it makes it so humid you think your socks are wet( like florida)")
+    print("Shiny flies over head every other second shreching and yelling")
+    print("shiny lands time to fight")
+    fight()
+    enemy_fight()
 
-# function for habit forest car
-# show the user(you are in the forest car it is covered in trees head to toe the air smellys musty)
-# show the user(its dead slient you slowly wonder what else is dead in there)
-# show the user you start seeing stars and decide its best to leave. 
-# mental state minus 20 
-# 
-# function for boss battle 
-# show the user( gilbret screams many people flood in)
-# (he takes a swing)
-# if mental state is lower than 40
-# then he hits you and you lose 20 health 
+def habit_forest_car():
+    print("you are in the forest car it is covered in trees head to toe the air smellys musty")
+    print("its dead slient you slowly wonder what else is dead in there")
+    print("you start seeing stars and decide its best to leave.")
+    mental - 20 
+def boss_battle():
+    print("gilbret screams many people flood in")
+    print("he takes a swing")
+    if mental <= 40:
+        then he hits you and you lose 20 health 
 # else;
 # he misses but goes again
 # if strength is greater than 25 
