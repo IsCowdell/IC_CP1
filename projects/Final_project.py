@@ -19,8 +19,7 @@ shiny = 50
 shiny_strength = 10
 # list for inverntory
 inventory = []
-# making a list for all of the rooms
-rooms = []
+
 # don stats
 #strength = 24
 don_strength = 24
@@ -30,17 +29,20 @@ health = 80
 fork = strength + 20
 roasted_crab = health + 20 
 dollar_bill = health + 20 
+items = [fork,roasted_crab,dollar_bill]
 
-#buddy 
-# this will be your guide and explain each room to you 
-# print hi my name is buddy I will guide you
-print("hi my name is buddy I will guide you")
+
+
+    
 
 
 # define the function to see if user picekd up item 
 def item_pickup():
-# if item in inventory 
-    
+# if item in inventory
+    if items in inventory:
+        print("")
+    else:
+        print("")
 # do not show user item.
 
 # define the function enemy fight: 
@@ -81,17 +83,17 @@ def fight():
         print(f"your health is now {health}") 
     else:
         print("you have nothing in your inventory")
-# show the user choose your attacks
-print("user choose your attacks ")
-#attack one will be smack hard 
-print("attack one will be smack hard attack\n two will be smack harder\nattack three is kick hard\n")
-attack = input("Now choose one") 
-if attack == " attack one ":
-    shiny - 20
-if attack == "attack two":
-    shiny - 40 
-if attack == "attack three":
-    shiny - 30
+    # show the user choose your attacks
+    print("user choose your attacks ")
+    #attack one will be smack hard 
+    print("attack one will be smack hard attack\n two will be smack harder\nattack three is kick hard\n")
+    attack = input("Now choose one") 
+    if attack == " attack one ":
+        shiny - 20
+    if attack == "attack two":
+        shiny - 40 
+    if attack == "attack three":
+        shiny - 30
 
 # leave function
 def leave():
@@ -106,11 +108,11 @@ def leave():
 # you are now playing rock or scissors no paper 
     print(" you are now plaing rock or scissors no paper")
 # 1 = rock 
-    1 = "rock"
+    1 == "rock"
 #  2 = scissors 
-    2 = "scissors"
+    2 == "scissors"
 # show the user " chose one 1 or 2"
-    choose = input("choose "1" or "2"")
+    choose = input('choose "1"or "2" ')
 # if choose = 1 
     if choose == 1:
 # print(" You won")
@@ -158,7 +160,7 @@ def dinning_room():
 # else:
     else:
         print("wow you didn't want a fork.")
-# 
+
 
 # define the function family car 
 def family_car():
@@ -238,26 +240,49 @@ def boss_battle():
     print("gilbret screams many people flood in")
     print("he takes a swing")
     if mental <= 40:
-        then he hits you and you lose 20 health 
-# else;
-# he misses but goes again
-# if strength is greater than 25 
-# he misses but goes again
-# else:
-#he hits you and you lose 20 health 
+        print("then he hits you and you lose 20 health")
+    else:
+        print("he misses but goes again")
+    if strength < 25: 
+        print("he misses but goes again")
+    else:
+        print("he hits you and you lose 20 health")
+
+def conductor_car():
+    print("you have entered the conductor car but he isn't in there strange")
+    print("something starts cackling in the corner i have been watching you something says")
+    print("you look behind you and see.........")
+    print("glibert")
+    print("he is so tiny you could defiently fight him")
+    while health > 80:
+        run_emeny = True
+        if run_emeny:
+            boss_battle()
+        else:
+            fight()
+    else:
+        run_emeny = False
+
+# making a list for all of the rooms
+rooms = ["dinning_room","play_room","habit_car_water","habit_forest_car","watching_car","family_car","coal_car","conductor_car","secret_tunnel"]
 
 
-# function for conductor car 
-# show the user (you have entered the conductor car but he isn't in there strange)
-# show the user (something starts cackling in the corner i have been watching you something says)
-# show the user(you look behind you and see.........)
-# show the user(glibert)
-# show the user he is so tiny you could defiently fight him
-# calling on fight function and boss battle function. 
-# switch bewtween the two
-# I DONT KNOW HOW I WILL BUT I WILL
-# ask user what room the want to and if room in room list 
-# play the function for that room
+#buddy 
+# this will be your guide and explain each room to you 
+# print hi my name is buddy I will guide you
+print("hi my name is buddy I will guide you")
 
+while True:
+    # Display available rooms for better user experience
+    print(f"Available rooms: {list(rooms)}")
+    
+    room = input("What room do you want to go to? ")
 
+    if room in rooms:
+        print(f"Navigating to {room}...")
+        rooms[room]() # This calls the function associated with the room name
+        break # Exit the loop once a valid room is chosen and processed
+    else:
+        # The code automatically goes back to the start of the 'while True' loop from here
+        print(f"Sorry, '{room}' is not a recognized room. Please choose from the list above.")
 
