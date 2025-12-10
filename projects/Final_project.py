@@ -157,6 +157,7 @@ def dinning_room():
     if "yes":
 # add to inventory()
         inventory.append(fork) 
+        print("You now have a fork in inventory")
 # else:
     else:
         print("wow you didn't want a fork.")
@@ -174,39 +175,42 @@ def family_car():
         secret_tunnel()
 # define the function secret  tunnels 
 def secret_tunnel():
-    sercet_choice = input("you found Henry Hermit Crab do you want to pet him or countine foward")
-    if sercet_choice == "pet him":
+    sercet_choice = input("you found Henry Hermit Crab do you want to pet him or countine foward:")
+    if sercet_choice == " pet him":
         print(" you got a roasted crab it can increase your heath by 10 points ")
         print(" when the option is given to you open your invertory by pressing 1")
         inventory.append("roasted crab")
-        mental - 20 
+        mental -= 20 
         print(f"your mental state is now {mental} make sure it doesn't get to low like 20")
-    if sercet_choice ==  "countine foward":
-        print("you got out of the tunnel you are in the play area")
-        play_room()
     else:
         print("incorrect value")
         return
 
+    if sercet_choice ==  "countine foward":
+        print("you got out of the tunnel you are in the play area")
+        play_room()
+    
 # defining function play room 
 def play_room():
     print("You enter a darkish yellow room with a smell of apple sauce and tears")
     print("there is a ball pit looking deeper than your sorrows(ik you have a lot)\n and a slide looking higher than your dreams")
-    play_choice = ("where to the ball pit or slide or leave")
+    play_choice = input("where to the ball pit or slide:")
     if play_choice == "slide":
         print("wow you went down the slide")
         leave()
     if play_choice == "ball pit":
         print("you jump into the pit you can just smell the amount of socks in it" )
         ball_pitchoice = input("you can jump out or stay in")
-    if ball_pitchoice == "jump out":
-        print("you get out")
-        leave()
-    else:
-        print("you swim around and a find a dollar")
-        input("keep it yes or no ")
+        if ball_pitchoice == "jump out":
+            print("you get out")
+            leave()
+        else:
+            print("you swim around and a find a dollar")
+            input("keep it yes or no:")
     if "yes":
         inventory.append(dollar_bill)
+        print(f"you added a dollar into your {inventory}")
+        leave()
     else:
         leave()
 
@@ -278,11 +282,33 @@ while True:
     
     room = input("What room do you want to go to? ")
 
-    if room in rooms:
+    if room == "dinning room":
         print(f"Navigating to {room}...")
-        rooms[room]() # This calls the function associated with the room name
-        break # Exit the loop once a valid room is chosen and processed
+        dinning_room()
+    elif room == "play room":
+        print(f"Navigating to {room}...")
+        play_room()
+    elif room == "habit car water":
+        print(f"Navigating to {room}...")
+        habit_car_water()
+    elif room == "habit forest car":
+        print(f"Navigating to {room}...")
+        habit_forest_car()
+    elif room == "watching car":
+        print(f"Navigating to {room}...")
+        watching_car()
+    elif room == "family car":
+        print(f"Navigating to {room}...")
+        family_car()
+    elif room == "coal car":
+        print(f"Navigating to {room}...")
+        coal_car()
+    elif room == "conductor car":
+        print(f"Navigating to {room}...")
+        conductor_car()
+    
     else:
         # The code automatically goes back to the start of the 'while True' loop from here
         print(f"Sorry, '{room}' is not a recognized room. Please choose from the list above.")
 
+   
