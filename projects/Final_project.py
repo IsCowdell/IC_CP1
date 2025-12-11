@@ -2,7 +2,7 @@
 # import random
 import random
 # mental = 100
-mental = 100 
+mental = 80 
 #health = 100
 health = 100 
 #strength = 50 
@@ -18,7 +18,9 @@ conductor_strength = 20
 shiny = 50 
 shiny_strength = 10
 # list for inverntory
-inventory = []
+inventory = [""]
+
+damage = 20 
 
 # don stats
 #strength = 24
@@ -29,7 +31,7 @@ health = 80
 fork = strength + 20
 roasted_crab = health + 20 
 dollar_bill = health + 20 
-items = [fork,roasted_crab,dollar_bill]
+items = ["fork","roasted_crab","dollar_bill"]
 
 
 
@@ -40,9 +42,9 @@ items = [fork,roasted_crab,dollar_bill]
 def item_pickup():
 # if item in inventory
     if items in inventory:
-        print("")
+        print("you already have this item you dont get it twice")
     else:
-        print("")
+        print(" take the item")
 # do not show user item.
 
 # define the function enemy fight: 
@@ -114,7 +116,7 @@ def leave():
 # show the user " chose one 1 or 2"
     choose = input('choose "1"or "2" ')
 # if choose = 1 
-    if choose == 1:
+    if choose == "1":
 # print(" You won")
         print("You Won!")
 # Don gets mad and cries 
@@ -128,7 +130,7 @@ def leave():
 #(the cries just stop you look down his neck in your hands.)
         print("the cries just stop you look down his neck in your hands.")
 #mental - 20 
-        mental - 20
+        mental - damage
 #(f"Your mental state is {mental} low get it up)   
         print(f"Your mental state is {mental} low get it up")
 # else
@@ -167,20 +169,21 @@ def dinning_room():
 def family_car():
     print("right now you are in the family car")
     print("the room is empty but a bed the bed does nothing")
-    leaver_room = input("do you want to leave the room or touch the bed?")
-    if leaver_room == "leave room":
-        input("what room do you want to go to?")
-    else:
+    leaver_room = input("do you want to leave the room or touch the bed?").strip()
+    if leaver_room == "touch the bed":
         print("you are in the secret tunnel")
         secret_tunnel()
+    else:
+        print("you leave the room")
+        return
 # define the function secret  tunnels 
 def secret_tunnel():
-    sercet_choice = input("you found Henry Hermit Crab do you want to pet him or countine foward:")
-    if sercet_choice == " pet him":
+    sercet_choice = input("you found Henry Hermit Crab do you want to pet him or countine foward:").strip()
+    if sercet_choice == "pet him":
         print(" you got a roasted crab it can increase your heath by 10 points ")
         print(" when the option is given to you open your invertory by pressing 1")
         inventory.append("roasted crab")
-        mental -= 20 
+        mental -= damage
         print(f"your mental state is now {mental} make sure it doesn't get to low like 20")
     else:
         print("incorrect value")
@@ -194,30 +197,29 @@ def secret_tunnel():
 def play_room():
     print("You enter a darkish yellow room with a smell of apple sauce and tears")
     print("there is a ball pit looking deeper than your sorrows(ik you have a lot)\n and a slide looking higher than your dreams")
-    play_choice = input("where to the ball pit or slide:")
+    play_choice = input("where to the ball pit or slide:").strip()
     if play_choice == "slide":
         print("wow you went down the slide")
         leave()
-    if play_choice == "ball pit":
+    elif play_choice == "ball pit":
         print("you jump into the pit you can just smell the amount of socks in it" )
         ball_pitchoice = input("you can jump out or stay in")
         if ball_pitchoice == "jump out":
             print("you get out")
-            leave()
         else:
             print("you swim around and a find a dollar")
-            input("keep it yes or no:")
-    if "yes":
-        inventory.append(dollar_bill)
-        print(f"you added a dollar into your {inventory}")
-        leave()
+            input("keep it yes or no:").strip()
+            if "yes":
+                inventory.append(dollar_bill)
+                print(f"you added a dollar into your inventory {inventory}")
+                leave()
     else:
         leave()
 
 def coal_car():
     print(" This is the only place you can get your mental health back vist often")
     print("coal stacked as tall as much money I have (so lots)")
-    mental + 20 
+    mental + damage
     print(" you got 20 added onto your mental state make sure it doesn't go lower than 20")
 
 # function for watching car: 
@@ -239,18 +241,22 @@ def habit_forest_car():
     print("you are in the forest car it is covered in trees head to toe the air smellys musty")
     print("its dead slient you slowly wonder what else is dead in there")
     print("you start seeing stars and decide its best to leave.")
-    mental - 20 
+    mental -= damage
 def boss_battle():
+    damage1 = 40
     print("gilbret screams many people flood in")
     print("he takes a swing")
     if mental <= 40:
         print("then he hits you and you lose 20 health")
+        health - damage1
+
     else:
         print("he misses but goes again")
     if strength < 25: 
         print("he misses but goes again")
     else:
         print("he hits you and you lose 20 health")
+        health - damage
 
 def conductor_car():
     print("you have entered the conductor car but he isn't in there strange")
@@ -258,57 +264,70 @@ def conductor_car():
     print("you look behind you and see.........")
     print("glibert")
     print("he is so tiny you could defiently fight him")
-    while health > 80:
+    while health >= 80:
+    
         run_emeny = True
         if run_emeny:
             boss_battle()
         else:
             fight()
     else:
+        print("You dont have enough health to fight him.")
         run_emeny = False
 
 # making a list for all of the rooms
 rooms = ["dinning_room","play_room","habit_car_water","habit_forest_car","watching_car","family_car","coal_car","conductor_car","secret_tunnel"]
 
 
+
+
+def start_game():
+
+    while health != 0:
+            # Display available rooms for better user experience
+        print(f"Available rooms: {list(rooms)}")
+        
+        room = input("What room do you want to go to? ").strip()
+
+        if room == "dinning room":
+            print(f"Navigating to {room}...")
+            dinning_room()
+        elif room == "play room":
+            print(f"Navigating to {room}...")
+            play_room()
+        elif room == "habit car water":
+            print(f"Navigating to {room}...")
+            habit_car_water()
+        elif room == "habit forest car":
+            print(f"Navigating to {room}...")
+            habit_forest_car()
+        elif room == "watching car":
+            print(f"Navigating to {room}...")
+            watching_car()
+        elif room == "family car":
+            print(f"Navigating to {room}...")
+            family_car()
+        elif room == "coal car":
+            print(f"Navigating to {room}...")
+            coal_car()
+        elif room == "conductor car":
+            print(f"Navigating to {room}...")
+            conductor_car()
+        else:
+            # The code automatically goes back to the start of the 'while True' loop from here
+            print(f"Sorry, '{room}' is not a recognized room. Please choose from the list above.")
+    else:
+        print("you died....")
+        print(" do you want to play again")
+        input("yes or no")
+    if "yes": 
+        start_game()
+    else:
+        print("good bye")
+        
 #buddy 
 # this will be your guide and explain each room to you 
 # print hi my name is buddy I will guide you
 print("hi my name is buddy I will guide you")
-
-while True:
-    # Display available rooms for better user experience
-    print(f"Available rooms: {list(rooms)}")
-    
-    room = input("What room do you want to go to? ")
-
-    if room == "dinning room":
-        print(f"Navigating to {room}...")
-        dinning_room()
-    elif room == "play room":
-        print(f"Navigating to {room}...")
-        play_room()
-    elif room == "habit car water":
-        print(f"Navigating to {room}...")
-        habit_car_water()
-    elif room == "habit forest car":
-        print(f"Navigating to {room}...")
-        habit_forest_car()
-    elif room == "watching car":
-        print(f"Navigating to {room}...")
-        watching_car()
-    elif room == "family car":
-        print(f"Navigating to {room}...")
-        family_car()
-    elif room == "coal car":
-        print(f"Navigating to {room}...")
-        coal_car()
-    elif room == "conductor car":
-        print(f"Navigating to {room}...")
-        conductor_car()
-    
-    else:
-        # The code automatically goes back to the start of the 'while True' loop from here
-        print(f"Sorry, '{room}' is not a recognized room. Please choose from the list above.")
-
+start_game()
    
