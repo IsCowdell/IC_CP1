@@ -39,13 +39,8 @@ items = ["fork","roasted_crab","dollar_bill"]
 
 
 # define the function to see if user picekd up item 
-def item_pickup():
-# if item in inventory
-    if items in inventory:
-        print("you already have this item you dont get it twice")
-    else:
-        print(" take the item")
-# do not show user item.
+
+    
 
 # define the function enemy fight: 
 def enemy_fight():
@@ -152,17 +147,23 @@ def dinning_room():
 # he looks over and waves 
     print("He looks over smiles and waves")
 # There is a fork
-    print("there is a fork")
-# do you want to grab it? y/n 
-    input("Do you want to to grab it? yes or no")
-# if yes:
-    if "yes":
-# add to inventory()
-        inventory.append(fork) 
-        print("You now have a fork in inventory")
-# else:
-    else:
-        print("wow you didn't want a fork.")
+    for i in items:
+        if i in inventory:
+            print("you already have this item you dont get it twice")
+        else:
+            
+            # do not show user item.
+                print("there is a fork")
+            # do you want to grab it? y/n 
+                input("Do you want to to grab it? yes or no")
+            # if yes:
+                if "yes":
+            # add to inventory()
+                    inventory.append(fork) 
+                    print("You now have a fork in inventory")
+            # else:
+                else:
+                    print("wow you didn't want a fork.")
 
 
 # define the function family car 
@@ -206,15 +207,20 @@ def play_room():
         ball_pitchoice = input("you can jump out or stay in")
         if ball_pitchoice == "jump out":
             print("you get out")
+            leave()
         else:
             print("you swim around and a find a dollar")
-            input("keep it yes or no:").strip()
-            if "yes":
-                inventory.append(dollar_bill)
-                print(f"you added a dollar into your inventory {inventory}")
-                leave()
-    else:
-        leave()
+            for i in items:
+                if i in inventory:
+                    print("you already have this item you dont get it twice")
+                else:
+                    input("keep it yes or no:").strip()
+                    if "yes":
+                        inventory.append(dollar_bill)
+                        print(f"you added a dollar into your inventory {inventory}")
+                        leave()
+                    else:
+                        leave()
 
 def coal_car(mental,damage):
     print(" This is the only place you can get your mental health back vist often")
@@ -304,7 +310,7 @@ while health != 0:
                         play_room()
             elif room == "habit car water":
                         print(f"Navigating to {room}...")
-                        habit_car_water(damage,mental)
+                        habit_car_water()
             elif room == "habit forest car":
                             print(f"Navigating to {room}...")
                             habit_forest_car(damage,mental)
