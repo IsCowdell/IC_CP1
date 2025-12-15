@@ -156,21 +156,26 @@ def family_car(mental,damage,inventory):
 
 def secret_tunnel(mental,damage,inventory):
     sercet_choice = input("you found Henry Hermit Crab do you want to pet him or countine foward:").strip()
-    if sercet_choice == "pet him":
-        print(" you got a roasted crab it can increase your heath by 10 points ")
-        print(" when the option is given to you open your invertory by pressing 1")
-        inventory.append("roasted crab")
-        mental -= damage
-        print(f"your mental state is now {mental} make sure it doesn't get to low like 20")
+    for i in items:
+        if i != inventory:
+            if sercet_choice == "pet him":
+                print(" you got a roasted crab it can increase your heath by 10 points ")
+                print(" when the option is given to you open your invertory by pressing 1")
+                inventory.append("roasted crab")
+                mental -= damage
+                print(f"your mental state is now {mental} make sure it doesn't get to low like 20")
 
-    elif sercet_choice ==  "continue foward":
-        print("you got out of the tunnel you are in the play area")
-        play_room()
+            elif sercet_choice ==  "continue foward":
+                print("you got out of the tunnel you are in the play area")
+                play_room()
 
-    else:
-        print("incorrect value")
-        return
-    
+            else:
+                print("incorrect value")
+                return
+        else:
+             print("you already have this item")
+         
+            
 
 def play_room(mental,damage,dollar_bill,inventory):
     print("You enter a darkish yellow room with a smell of apple sauce and tears")
@@ -187,6 +192,11 @@ def play_room(mental,damage,dollar_bill,inventory):
             leave(mental,damage)
         else:
             print("you swim around and a find a dollar")
+            if input("keep it yes or no:") == "yes":
+                        inventory.append("dollar_bill")
+                        print(f"you added a dollar into your inventory {inventory}")
+                        leave(mental,damage)
+
             for i in items:
                 if i in inventory:
                     print("you already have this item you dont get it twice")
@@ -312,7 +322,8 @@ def start_game():
     else: 
          print("your still alive")
 while health > 0:
-             
+            print(" Basically it went off course and the gilbert turned everything evil and you as the viewer were forced to get to the train conductor so the final boss is the gilbert.Each train cart is a different combat room and has their individual monsters based on the show like shiny. It will be hand to hand combat and you can pick up things like a bone to increase combat damage  or a piece of meat to increase your health  and buddies that help guide you around")
+            print("hi my name is buddy I will guide you")
             print(f"Available rooms: {list(rooms)}")
             room = input("What room do you want to go to? Do not put underscores:  ").strip()
             if room == "dinning room":
@@ -350,8 +361,7 @@ else:
     else:
         print("good bye")
 
-print("")
-print("hi my name is buddy I will guide you")
+
 
 start_game()
    

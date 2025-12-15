@@ -1,4 +1,2 @@
 
-# don stats
-#strength = 24
-don_strength = 24
+                if i in inventory:
