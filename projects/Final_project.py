@@ -4,7 +4,7 @@ mental = 80
 health = 100 
 strength = 50 
 
-gilbert_health = 200
+gilbert_health = 100
 gilbert_strength = 10
 conductor_health = 200 
 conductor_strength = 20
