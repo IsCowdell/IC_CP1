@@ -27,7 +27,7 @@ GOLD      = (212, 175, 55)
 # ─────────────────────────────────────────────
 # FONT  ← your Darkbyte font, one function for everything
 # ─────────────────────────────────────────────
-FONT_PATH       = r'assets\Darkbyte-4nly6.ttf'
+FONT_PATH       = r'P:\Cowdell,Isabella//IC_CP1\Darkbyte-4nly6.ttf'
 FONT_SIZE       = 36
 FONT_SIZE_LARGE = 52
 FONT_SIZE_SMALL = 24
@@ -40,7 +40,7 @@ def draw_text(text, size, color, surface, x, y):
     surface.blit(text_obj, text_rect)
  
 # ─────────────────────────────────────────────
-# IMAGES  ← drop your asset paths here
+# IMAGES
 # ─────────────────────────────────────────────
 # bg_image  = pygame.image.load("assets/images/intro_bg.png").convert()
 # bg_image  = pygame.transform.scale(bg_image, (WIDTH, HEIGHT))
@@ -50,7 +50,7 @@ bg_image  = None   # Replace with the lines above when ready
 king_portrait = None
  
 # ─────────────────────────────────────────────
-# MUSIC  ← drop your asset path here
+# MUSIC 
 # ─────────────────────────────────────────────
 # pygame.mixer.music.load("assets/music/intro_theme.ogg")
 # pygame.mixer.music.set_volume(0.6)
